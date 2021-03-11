@@ -10,10 +10,9 @@ import java.util.Random;
 public class Timer {
 
     public static void main(String[] args) {
-        final int DATASIZE = 10000000;
+        final int DATASIZE = 2000000;
 
         // TODO: Uncomment lines below after both searches are implemented
-        /*
         IntArrayGenerator intArrayGenerator = new IntArrayGenerator(new Random());
         System.out.println("Generating array...");
         int[] array = intArrayGenerator.generateOrderedSequence(DATASIZE);
@@ -21,7 +20,6 @@ public class Timer {
 
         timeLinearSearch(array);
         timeBinarySearch(array);
-        */
     }
 
     /**

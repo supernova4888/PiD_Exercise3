@@ -3,6 +3,8 @@
  */
 package pid.exercise.search;
 
+import java.util.Arrays;
+
 /**
  * The purpose of this class is to provide static methods for searching integer arrays and does not need to be
  * instantiated.
@@ -11,17 +13,95 @@ public class Search {
 
     public static int linearSearch(int[] array, int value) {
         // TODO Implement linear search
-        return 0;
+
+        // if array is empty
+        if (array.length == 0) {
+            return -1;
+        }
+
+        // why does it matter that the array is EVEN or ODD? i guess for testing purposes it doesn't?
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == value) {
+                // tip1: always know what i'm comparing with. What is each element in the operation.
+                // tip2: check logic upside down
+                // find it and return array[i] = element.
+                // i want the element: i = index.
+                return i;
+            }
+        }
+        return -1;
     }
 
-    public static int binarySearch(int[] array, int value) {
-        // TODO Implement iterative binary search
-        return 0;
-    }
+        // two solutions: 1. wrong 2. correct
+        public static int binarySearch ( int[] array, int value) {
 
-    public static int binarySearchRecursive(int[] array, int value) {
-        // TODO Implement recursive binary search
-        return 0;
-    }
+            int left = 0;
+            int right = array.length - 1;
 
-}
+            while (left <= right) {
+
+                int mid = (left + right) / 2;
+
+                if (array[mid] == value) {
+                    return mid;
+                } else if (value < array[mid]) {
+                    right = mid - 1;
+                } else {
+                    left = mid + 1;
+                }
+            }
+            return -1;
+        }
+
+            // TODO Implement iterative binary search
+
+            /*int i = 0; // index
+            int low = array[0]; // values
+            int mid; // values
+            int high; // values
+            int lastNum = array[array.length-1]; ---> correct, this is the last element
+            int elem = (array.length/2); // index ---> equal to MID
+            int elem1 = array[elem]; // element (value in index)
+
+
+            // loop through entire array
+            // correction: this is looping until finding the element
+            while (elem1 != value) {
+
+                mid = elem1;
+                high = lastNum;
+
+                if (mid < value) {
+                    low = array[mid + 1];
+
+                    if (low > high) {
+                        return -1;
+                    }
+                    // do nothing. continue looping.
+
+                } else {
+                    // in this case mid > value so do same here but oposite
+                    high = array[mid -1];
+                    // same test here
+                    if (low > high){
+                        return -1;
+                    }
+
+                }
+            }
+            i++;
+            return i; // this is the index*/
+
+
+
+
+
+
+
+        public static int binarySearchRecursive ( int[] array, int value){
+            // TODO Implement recursive binary search
+            return 0;
+        }
+
+    }
